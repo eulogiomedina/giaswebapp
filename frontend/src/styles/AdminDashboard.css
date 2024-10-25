@@ -18,47 +18,39 @@ p {
 }
 
 .dashboard-tools-container {
-  display: flex;
-  justify-content: center;
+  display: grid; /* Usar grid para un diseño responsivo */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px; /* Espaciado entre tarjetas */
+  justify-items: center; /* Centrar las tarjetas dentro de las celdas */
   margin-bottom: 50px;
-  gap: 20px; /* Espacio entre las tarjetas de herramientas */
+  width: 100%; /* Asegúrate de que el contenedor ocupe el 100% del ancho */
 }
 
-/* Estilo para las tarjetas de herramientas */
 .dashboard-tool {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  width: 220px;
   text-align: center;
   padding: 20px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  width: 100%; /* Hacer que la tarjeta ocupe todo el ancho disponible */
+  max-width: 220px; /* Ancho máximo para las tarjetas */
 }
 
 .dashboard-tool:hover {
   transform: translateY(-10px);
 }
 
-/* Estilo para los iconos */
 .tool-icon {
   width: 60px;
   height: 60px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  background-color: #9acd32; /* Color personalizado para "Gestión de Políticas" */
+  background-color: #9acd32; /* Color personalizado para el icono */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Estilo específico para los iconos de auditoría */
-.log-icon {
-  background-color: #007bff; /* Color azul para registros de inicio de sesión */
-}
-
-.password-change-icon {
-  background-color: #ff5722; /* Color naranja para cambios de contraseña */
 }
 
 .view-button {

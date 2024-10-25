@@ -47,21 +47,29 @@ app.use(session({
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const policyRoute = require('./routes/policyRoutes');  // Importar rutas de políticas
+const termsRoute = require('./routes/terms');
 const passwordResetRoutes = require('./routes/passwordReset');
 const auditRoute = require('./routes/audit'); // Importar rutas de auditoría
 const contactRoute = require('./routes/contact');
+const socialLinksRoutes = require('./routes/socialLinks');
+const legalBoundaryRoute = require('./routes/legalBoundaryRoutes');
+const sloganRoutes = require('./routes/SloganRoutes');
 
 
 // Usar las rutas
 app.use('/api/users', usersRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/policies', policyRoute);  // Usar rutas de políticas
+app.use('/api/terms', termsRoute);
 app.use('/api/password', passwordResetRoutes);
 app.use('/api/contact', contactRoute);
 //Rutas protegidas
 app.use('/api', protectedRoutes);
 app.use('/api/audit', auditRoute); // Usar rutas de auditoría
 // Usar rutas de restablecimiento de contraseña
+app.use('/api/social-links', socialLinksRoutes);
+app.use('/api/legal-boundaries', legalBoundaryRoute);
+app.use('/api/slogan', sloganRoutes);
 
 // Ruta para verificar que el servidor funciona
 app.get('/', (req, res) => {
